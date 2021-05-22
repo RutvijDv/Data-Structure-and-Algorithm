@@ -1,13 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bfs(vector<int> adj[], vector<int> &res, int i, int V)
+void bfs(vector<int> adj[], vector<int> &res, int i, vector<bool> visited)
 {
-
-    bool visited[V];
-    for (int i = 0; i < V; i++)
-        visited[i] = false;
-
     queue<int> q;
     q.push(i);
 
@@ -38,7 +33,7 @@ int bfsOfGraph(int V, vector<int> adj[])
     {
         if (!visited[i])
         {
-            bfs(adj, res, i, V);
+            bfs(adj, res, i, visited);
             count++;
         }
     }

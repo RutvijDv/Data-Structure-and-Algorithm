@@ -31,7 +31,6 @@ void bfs(vector<int> adj[], vector<int> &res, int i, int V)
 vector<int> bfsOfGraph(int V, vector<int> adj[])
 {
     vector<int> res;
-    vector<bool> visited(V, false);
 
     bfs(adj, res, 0, V);
 
