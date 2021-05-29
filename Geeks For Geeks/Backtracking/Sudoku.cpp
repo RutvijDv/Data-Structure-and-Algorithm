@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isSafe(int grid[N][N], int i, int j, int x)
+bool isSafe(vector<vector<int>> grid, int N, int i, int j, int x)
 {
     for (int k = 0; k < N; k++)
     {
@@ -25,7 +25,7 @@ bool isSafe(int grid[N][N], int i, int j, int x)
     return true;
 }
 
-bool SolveSudoku(int grid[N][N])
+bool SolveSudoku(vector<vector<int>> grid, int N)
 {
     int i, j;
     bool flag = false;
@@ -48,10 +48,10 @@ bool SolveSudoku(int grid[N][N])
 
     for (int x = 1; x <= N; x++)
     {
-        if (isSafe(grid, i, j, x))
+        if (isSafe(grid, N, i, j, x))
         {
             grid[i][j] = x;
-            if (SolveSudoku(grid))
+            if (SolveSudoku(grid, N))
                 return true;
             grid[i][j] = 0;
         }
@@ -60,8 +60,7 @@ bool SolveSudoku(int grid[N][N])
     return false;
 }
 
-//Function to print grids of the Sudoku.
-void printGrid(int grid[N][N])
+void printGrid(vector<vector<int>> grid, int N)
 {
     for (int i = 0; i < N; i++)
     {
