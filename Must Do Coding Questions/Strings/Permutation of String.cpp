@@ -33,11 +33,11 @@ vector<string> find_permutation(string S)
 }
 
 //Another approach
-void permute(string s, string answer)
+void permute(string s, string answer, vector<string> &res)
 {
     if (s.length() == 0)
     {
-        cout << answer << "  ";
+        res.push_back(answer);
         return;
     }
     for (int i = 0; i < s.length(); i++)
@@ -46,7 +46,7 @@ void permute(string s, string answer)
         string left_substr = s.substr(0, i);
         string right_substr = s.substr(i + 1);
         string rest = left_substr + right_substr;
-        permute(rest, answer + ch);
+        permute(rest, answer + ch, res);
     }
 }
 
@@ -54,7 +54,7 @@ vector<string> find_permutation(string S)
 {
     vector<string> res;
 
-    permute(S, 0, res);
+    permute(S, "", res);
 
     sort(res.begin(), res.end());
 
