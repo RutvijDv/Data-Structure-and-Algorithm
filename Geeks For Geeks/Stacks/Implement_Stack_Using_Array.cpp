@@ -53,5 +53,14 @@ int main()
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
 
+    Stack s;
+
+    s.push(1);
+    s.push(20);
+    s.push(30);
+    cout << s.pop() << endl;
+    s.push(5);
+    cout << s.pop();
+
     return 0;
 }

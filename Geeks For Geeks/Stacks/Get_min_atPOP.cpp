@@ -15,6 +15,7 @@ public:
     };
     void push(int x);
     int pop();
+    int getTop();
     bool empty();
 };
 
@@ -47,11 +48,89 @@ bool Stack::empty()
         return false;
 }
 
+int Stack::getTop()
+{
+    int res = -1;
+    if (top >= 0)
+    {
+        res = arr[top];
+    }
+    return res;
+}
+//Using 2 stacks one for data and other for minimum element till that point
+
+class SpecialStack : public Stack
+{
+    Stack min;
+
+public:
+    void push(int x);
+    int pop();
+    int getMin();
+};
+
+void SpecialStack::push(int x)
+{
+    if (empty())
+    {
+        Stack::push(x);
+        min.push(x);
+    }
+    else
+    {
+        int y = min.getTop();
+        if (x < y)
+        {
+            min.push(x);
+        }
+        else
+        {
+            min.push(y);
+        }
+        Stack::push(x);
+    }
+    return;
+}
+
+int SpecialStack::pop()
+{
+    int res = -1;
+    if (!Stack::empty())
+    {
+        res = Stack::pop();
+        if (res == min.getTop())
+        {
+            min.pop();
+        }
+    }
+    return res;
+}
+
+int SpecialStack::getMin()
+{
+    int res = -1;
+    if (!Stack::empty())
+    {
+        res = min.getTop();
+    }
+    return res;
+}
+
 int main()
 {
-
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
+
+    SpecialStack s;
+    s.push(10);
+    s.push(20);
+    s.push(30);
+    cout << s.getMin() << endl;
+    s.push(5);
+    cout << s.getMin() << endl;
+    s.pop();
+    cout << s.getMin() << endl;
+    return 0;
 
     return 0;
 }
