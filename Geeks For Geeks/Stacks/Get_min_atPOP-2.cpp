@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Using 2 stacks one for data and other for minimum element till that point
+//Space optimised ---> Store only min elements once in min stack
+
 class Stack
 {
 private:
@@ -57,7 +60,6 @@ int Stack::getTop()
     }
     return res;
 }
-//Using 2 stacks one for data and other for minimum element till that point
 
 class SpecialStack : public Stack
 {
@@ -79,13 +81,9 @@ void SpecialStack::push(int x)
     else
     {
         int y = min.getTop();
-        if (x < y)
+        if (x <= y)
         {
             min.push(x);
-        }
-        else
-        {
-            min.push(y);
         }
         Stack::push(x);
     }
@@ -127,10 +125,7 @@ int main()
     s.push(30);
     cout << s.getMin() << endl;
     s.push(5);
-    cout << s.getMin() << endl;
-    s.pop();
-    cout << s.getMin() << endl;
+    cout << s.getMin();
     return 0;
-
     return 0;
 }
