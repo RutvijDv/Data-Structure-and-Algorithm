@@ -1,3 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 string removePair(string s)
 {
     stack<char> st;
