@@ -4,11 +4,13 @@ using namespace std;
 struct Node
 {
     Node *next = NULL;
+    Node *bottom = NULL;
     int data;
     Node(int x)
     {
         data = x;
         next = NULL;
+        bottom = NULL;
     }
 };
 
