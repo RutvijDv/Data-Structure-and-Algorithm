@@ -15,6 +15,8 @@ struct Node
 
 //Simple Stroing data of inorder traversal od both trees and comparing
 
+//Level Order Traversal
+
 //Recursive
 bool isIdentical(Node *r1, Node *r2)
 {
