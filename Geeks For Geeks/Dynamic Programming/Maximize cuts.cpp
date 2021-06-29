@@ -4,56 +4,43 @@ using namespace std;
 //Naive Solution
 int maximizeTheCuts(int n, int x, int y, int z)
 {
-    int a = 0, b = 0, c = 0;
+    if (n < 0)
+        return -1;
+    if (n == 0)
+        return 0;
 
-    if (n >= x)
-        a = maximizeTheCuts(n - x, x, y, z);
-    if (n >= y)
-        b = maximizeTheCuts(n - y, x, y, z);
-    if (n >= z)
-        c = maximizeTheCuts(n - z, x, y, z);
+    int a = maximizeTheCuts(n - x, x, y, z);
+    int b = maximizeTheCuts(n - y, x, y, z);
+    int c = maximizeTheCuts(n - z, x, y, z);
 
-    if (a)
-        a++;
-    if (b)
-        b++;
-    if (c)
-        c++;
+    int res = max(a, max(b, c));
 
-    int out = max(a, max(b, c));
-    if (n == x || n == y || n == z)
-        return max(out, 1);
+    if (res == -1)
+        return res;
     else
-        return out;
+        return res + 1;
 }
 //Efficient
 int maximizeTheCuts(int n, int x, int y, int z)
 {
-    vector<int> v(n + 1, 0);
-    int a, b, c;
+    vector<int> v(n + 1, -1);
+    v[0] = 0;
 
     for (int i = 1; i <= n; i++)
     {
+        if (i >= x)
+            v[i] = max(v[i], v[i - x]);
+        if (i >= y)
+            v[i] = max(v[i], v[i - y]);
+        if (i >= z)
+            v[i] = max(v[i], v[i - z]);
 
-        a = 0;
-        b = 0;
-        c = 0;
-
-        if (i == x || i == y || i == z)
-        {
-            v[i] = 1;
-        }
-
-        if (i >= x && v[i - x])
-            a = 1 + v[i - x];
-        if (i >= y && v[i - y])
-            b = 1 + v[i - y];
-        if (i >= z && v[i - z])
-            c = 1 + v[i - z];
-
-        int out = max(a, max(b, c));
-        v[i] = max(v[i], out);
+        if (v[i] != -1)
+            v[i]++;
     }
 
-    return v[n];
+    if (v[n] == -1)
+        return 0;
+    else
+        return v[n];
 }

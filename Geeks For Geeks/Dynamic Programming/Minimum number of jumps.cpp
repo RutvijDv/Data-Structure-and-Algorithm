@@ -7,7 +7,7 @@ int getMin(int arr[], int n, int idx)
 
     int x = arr[idx], res = INT_MAX;
 
-    if (x + idx >= n)
+    if (x + idx >= (n - 1))
         return 1;
 
     for (int i = 1; i <= x; i++)
