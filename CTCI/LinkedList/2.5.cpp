@@ -5,12 +5,19 @@ struct Node
 {
     Node *next = NULL;
     int data;
+    Node(int x)
+    {
+        data = x;
+        next = NULL;
+    }
 };
 
+//Simple ---> get both the numbers by traversing both LinkedList and create a new one
+
+//Better --->traversing and creating both at time
 Node *sum(Node *a, Node *b)
 {
-    Node *res = new Node;
-    res->data = 0;
+    Node *res = new Node(0);
 
     Node *resrun = res;
     int carry = 0;
@@ -33,16 +40,14 @@ Node *sum(Node *a, Node *b)
         carry = sum / 10;
         sum = sum % 10;
 
-        Node *x = new Node;
-        x->data = sum;
+        Node *x = new Node(sum);
 
         resrun->next = x;
     }
 
     if (carry > 0)
     {
-        Node *x = new Node;
-        x->data = carry;
+        Node *x = new Node(carry);
 
         resrun->next = x;
     }
