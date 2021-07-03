@@ -2,77 +2,40 @@
 using namespace std;
 
 //Simple
-
-int recur(int x, int temp)
+void solve(vector<int> arr, int i, int n, vector<int> res)
 {
-    if (temp == 0 || x == 0)
-        return 0;
-    if (temp == 1)
-        return x;
-
-    int res;
-
-    if (temp % 2 == 0)
+    if (i == n)
     {
-        res = recur(x, temp / 2);
-        res += res;
-    }
-    else
-    {
-        res = recur(x, temp / 2) + recur(x, (temp / 2) + 1);
+        for (int j = 0; j < res.size(); j++)
+            cout << res[j] << " ";
+        cout << endl;
+
+        return;
     }
 
-    return res;
+    solve(arr, i + 1, n, res);
+    res.push_back(arr[i]);
+    solve(arr, i + 1, n, res);
+
+    return;
 }
 
-//DP
-
-int recur(int x, int temp, vector<int> &dp)
+//Using Bit logic
+void solve(vector<int> arr)
 {
-    if (temp == 0 || x == 0)
-        return 0;
-    if (temp == 1)
-        return x;
-    if (dp[temp] > 0)
-        return dp[temp];
+    int s = arr.size();
 
-    int res;
+    int x = pow(2, s);
 
-    if (temp % 2 == 0)
+    for (int i = 0; i < x; i++)
     {
-        res = recur(x, temp / 2, dp);
-        res += res;
+        for (int j = 0; j < s; j++)
+        {
+            if (i & (1 << j))
+            {
+                cout << arr[j] << " ";
+            }
+        }
+        cout << endl;
     }
-    else
-    {
-        res = recur(x, temp / 2, dp) + recur(x, (temp / 2) + 1, dp);
-    }
-
-    return res;
-}
-
-//Tactics
-
-int recur(int x, int temp)
-{
-    if (temp == 0 || x == 0)
-        return 0;
-    if (temp == 1)
-        return x;
-
-    int res;
-
-    if (temp % 2 == 0)
-    {
-        res = recur(x, temp / 2);
-        res += res;
-    }
-    else
-    {
-        res = recur(x, temp / 2);
-        res += res;
-        res += x;
-    }
-
-    return res;
 }
