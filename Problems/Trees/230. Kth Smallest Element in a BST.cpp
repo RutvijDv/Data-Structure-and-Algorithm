@@ -41,3 +41,36 @@ int kthSmallest(TreeNode *root, int k)
 
     return 0;
 }
+
+// Optimised
+
+int count(TreeNode *root, int k, int &response)
+{
+
+    if (!root)
+        return 0;
+
+    int lCount = count(root->left, k, response);
+
+    if (lCount + 1 == k)
+    {
+        response = root->val;
+    }
+
+    int rCount = count(root->right, k - 1 - lCount, response);
+
+    return 1 + lCount + rCount;
+}
+
+int kthSmallest(TreeNode *root, int k)
+{
+
+    if (!root)
+        return 0;
+
+    int response = INT_MIN;
+
+    count(root, k, response);
+
+    return response;
+}
