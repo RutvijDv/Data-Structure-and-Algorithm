@@ -81,9 +81,9 @@
         - this is because in a loop of directed edges everyone is depenedent on each other hence is a endless loop.
     
 10. **Shortest path in directed acyclic unweighted graph**
-    1. DFS based ( make topological sort and then calculate distance of adjacent nodes )
-        - get topological sort array.
-        - pick one by one element of the sorted array as u, and update its al child (v)'s dis value as -> dis[v] = dis[u]+weight(u,v) if dis[v] was greater than the dis[u]-w(u,v) set value
+        - get topological sort array using bfs or dfs.
+        - pick one by one element of the sorted array as u, and update its al child (v)'s dis value as -> dis[v] = dis[u]+weight(u,v) if dis[v] was greater than the dis[u]-w(u,v) set value.
+
     
 11. **Prims’s Algorithm/ Minimum spanning tree ( weighted and undirected connected graph only )**
     
