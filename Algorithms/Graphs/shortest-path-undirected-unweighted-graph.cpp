@@ -11,6 +11,7 @@ void shortestDistance(vector<int> adj[], int V, int s, int dist[])
     queue<int> q;
 
     visited[s] = true;
+    dist[s] = 0;
     q.push(s);
 
     while (q.empty() == false)
