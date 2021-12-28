@@ -99,15 +99,33 @@
 
     Steps
     - create visited array for storing which elements are in mSet.
-    - create dis array which will display the distance of nodes from the current mSet if they are not included in mSet.
+    - create dis array which will display the distance of nodes from the current mSet if they are not included in mSet,  initially INT_MAX.
     - make dis[0] = 0 
-    - iterate of V vertices.
+    - iterate V vertices.
     - pick minimum distance from dis-array of an element which is not included in mSet.
     - now this node is to be included, hence make visited[u] = true.
+    - res += w (weight of mminimum distance element just found)
     - iterate to childs v of this current node u.
-    - update the distance of child if its less than w(u,v), because this child can be accessed from various other parents also.
+    - update the distance of child if its greater than w(u,v), because this child can be accessed from various other parents also.
     
 12. **Dijikstra’s Algorithm ( weighted and undirected graph, minimum distance from source to all vertices )**
+
+    Algorithm
+    
+    - create 2 sets of nodes - i) dis fixed ii) dis not fixed.
+    - gradually keep picking the minimum dis element.
+    - this way we fix node one by one from set ii) to set i)
+
+    Steps
+    - create visited array for storing which elements are fixed or not.
+    - create dis array which will display the distance of nodes from the source, initially INT_MAX.
+    - make dis[S] = 0 
+    - iterateV vertices.
+    - pick minimum distance from dis-array of an element which is not fixed.
+    - now this node is to be included, hence make visited[u] = true.
+    - iterate to childs v of this current node u.
+    - update the distance of child if its greater than dis[u]+w(u,v), because this child can be accessed from various other parents also.
+
     
 13. **BellmanFord’s Algorithm**
     1. Process all edges V times and relax them.
