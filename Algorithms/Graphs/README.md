@@ -19,7 +19,7 @@
     2. Topological sorting
     3. Path finding
     
-6. **Shortest path in Undirected unweighted Graph**
+6. **Shortest path in Undirected Unweighted Graph**
     1. BFS based solution
     
 7. **Detect cycle in undirected graph**
@@ -34,7 +34,7 @@
     1. **DFS based solution ( using recursion stack to keep track of nodes in present in same recursion stack or not )
     2. BFS based solution ( topological based, using indegree, and keeping count  of number of nodes visited )
     
-10. **Shortest path in direct acyclic unweighted graph**
+10. **Shortest path in directed acyclic unweighted graph**
     1. DFS based ( make topological sort and then calculate distance of adjacent nodes )
     
 11. **Prims’s Algorithm/ Minimum spanning tree ( weighted and undirected connected graph only )**
