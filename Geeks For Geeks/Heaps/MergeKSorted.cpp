@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//put all elements in one array and sort them -> Super Naive
+
+//Merge alla arrays one-by-one
+
+//Use Min Heap
 struct myTriplet
 {
     int element;

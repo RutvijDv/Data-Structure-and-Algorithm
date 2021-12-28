@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Sorting -> Naive
+
+//Use Max Heap -> not Efficient
+
+//Use Min Heap -> Efficient
 vector<int> kLargest(int arr[], int n, int k)
 {
     priority_queue<int, vector<int>, greater<int>> pq;

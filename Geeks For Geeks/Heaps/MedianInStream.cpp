@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Maintain an array in sorted manner -> Naive
+
+//Augmented BST -> kind of Kth Smallest in BST Question (here we find (size/2)th element)
+
+//Use min-max Heap both
 class Solution
 {
 private:

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Sort the array -> Naive
+
+//Use Min Heap
 long long minCost(long long arr[], long long n)
 {
     priority_queue<long long, vector<long long>, greater<long long>> pq(arr, arr + n);
