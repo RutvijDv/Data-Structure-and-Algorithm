@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//dfs Function
 void dfs(vector<int> adj[], vector<int> &res, vector<bool> &visited, int i)
 {
     res.push_back(i);
