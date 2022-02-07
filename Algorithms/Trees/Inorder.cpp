@@ -25,7 +25,7 @@ void inorder(Node *root)
 }
 
 // Iterative
-void inOrder(struct Node *root)
+void inorderIterative(struct Node *root)
 {
     stack<Node *> s;
     Node *curr = root;
