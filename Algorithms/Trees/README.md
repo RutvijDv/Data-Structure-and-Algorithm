@@ -30,21 +30,35 @@
     - Recursively go down the tree and add a count whenever you go down a step and keep a check on its max value.
     - TC - O(n),  SC - O(n)
     
-4. Level order traversal
+4. Level order traversal 
     - Traverse the tree in level order.
     - Use simple queue to store the upcoming nodes and search the tree using a while loop.
+    - TC - O(n),  SC - O(n)
     
 5. Level order traversal line by line
     - use a simple queue once again but here we use a while and a additional for loop inside it to maintain the level one by one, and print them in new line.
+    - TC - O(n),  SC - O(n)
     
 6. Different view of Binary tree
     
     All the below views of a tree can be achieved using different methods
     
     - Top view
+        
+        Here we will use the concept of level order traversal and keep track of distance of every node and push this dis along with node in our queue. At every node we will check if we have encountered a node with same distance previously. If no push this nodes data in our map with its distance, else do nothing and continue. At the end empty this whole map in our answer vector.
+        
     - Left view
+        - Use level order traverasal line by line and store first element.
+        - Use inorder traversal with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
+        
     - Right view
+        - Use level order traverasal line by line and store last element.
+        - Use inorder traversal where we visit right side before we visit left one, with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
+    
     - Bottom view
+        
+        Same as top view but instead of updating our map only when we encounter that distance first time, here we will update it every time we encounter that same distance.
+        
     
 7. Check for balanced binary tree
     - Naive method
