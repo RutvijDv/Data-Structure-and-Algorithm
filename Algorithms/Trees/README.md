@@ -16,12 +16,19 @@
     
     For iterative Solution we need to use stack, which will basically replace the use of call stack in recursion.
     
-    1. InOrder ( left - root - right ) 
-    2. PreOrder ( root - left - right )
-    3. PostOrder ( left - right - root )
+    Iterative solution steps:
+    
+    1. Use stack to keep track of all the visited nodes. push the root to stack initially
+    2. The main fundamental point is we will go left till we reach a null point and store all those node in stack and then one by one we will got to right of those stored nodes.
+    3. Main while loop if ( curr≠NULL || !st.empty() ).
+    4. Inside it another while loop if( curr≠NULL )  
+    5. Here in second loop we will go to left as much as possible.
+    6. Out of it we will pop one element from stack and move our curr to right of this popped element.
+    7. We will use our printing statement according to our need, at appropriate place in this for loop.
     
 3. Height of tree
     - Recursively go down the tree and add a count whenever you go down a step and keep a check on its max value.
+    - TC - O(n),  SC - O(n)
     
 4. Level order traversal
     - Traverse the tree in level order.
