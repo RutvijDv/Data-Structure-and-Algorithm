@@ -62,7 +62,13 @@
     
 7. Check for balanced binary tree
     - Naive method
+        - use inorder traversal or any other.
+        - At every node you are supposed to check if it is balanced or not.
+        - For that we will recursively call a height function at every node to check its left and right height.
+        
     - Efficient method
+        - Here we will collectively calculate the height and is balanced or not, hence at every node we will not require to calculate height.
+        - Our function isBalanced(Node* root) will return an integer. If that is -1 hence your root node is not balanced, else if its positive, its height of tree from that that node.
     
 8. Binary tree to Doubly Linked List
     
