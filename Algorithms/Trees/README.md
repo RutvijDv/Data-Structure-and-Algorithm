@@ -114,7 +114,12 @@
     A binary tree can only be constructed using following combinations.
     
     - inorder + preorder
+        - WKT preorder has node - left - right, hence we will pick one by one element from preorder from index 0 to n-1.
+        - For every element we select from preorder, we will find that element’s index in inorder. let say it is “i”.
+        - All the elements before index i will consist of left childs of our curr node and elements after index i will consist of right childs of our curr node.
+        
     - inorder + postorder
+        - The process is almost similar as above, but here we will start from n-1 index of postorder and go till 0th index, as post order is ( left - right - node ).
     
     Hence inorder traversals has to be there for building a binary tree.
     
