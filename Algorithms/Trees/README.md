@@ -130,11 +130,23 @@
     - same way vice versa with s2.
 
 1. Diameter of Tree
-    - Method 1
-    - Method 2
+    - Method 1 ( Naive Solution )
+        - calculate diameter of left subtree
+        - calculate diameter of right subtree
+        - calculate 1 + height( left-subtree ) + height( right-subtree )
+        - return max of all 3 above.
+        - TC - O(n^2)
+        
+    - Method 2 ( Efficient Solution )
+        - Keep a maxDia variable which keeps tracks of maximum diameter so far.
+        - util function returns the height of the current node.
+        - at every node we will update the maxDia variable according to heights of the subtrees.
+        - TC - O(n)
 
 1. LCA 
     - Method 1
+        
+        
     - Method 2
 
 1. Burn a Binary tree
