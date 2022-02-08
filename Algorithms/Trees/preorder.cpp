@@ -38,7 +38,7 @@ void preorderIterative(Node *root)
     {
         while (curr != NULL)
         {
-            cout << curr->data << " ";
+            cout << curr->key << " ";
 
             st.push(curr);
             curr = curr->left;
