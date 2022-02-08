@@ -1,3 +1,5 @@
+# Trees
+
 1. Application
     - To represent hierarchical data.
     - Binary Search Trees.
@@ -47,17 +49,23 @@
         
         Here we will use the concept of level order traversal and keep track of distance of every node and push this dis along with node in our queue. At every node we will check if we have encountered a node with same distance previously. If no push this nodes data in our map with its distance, else do nothing and continue. At the end empty this whole map in our answer vector.
         
+        TC - O(n),  SC - O(n)
+        
     - Left view
         - Use level order traverasal line by line and store first element.
         - Use inorder traversal with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
+        - TC - O(n),  SC - O(h)
         
     - Right view
         - Use level order traverasal line by line and store last element.
         - Use inorder traversal where we visit right side before we visit left one, with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
+        - TC - O(n),  SC - O(h)
     
     - Bottom view
         
         Same as top view but instead of updating our map only when we encounter that distance first time, here we will update it every time we encounter that same distance.
+        
+        TC - O(n),  SC - O(n)
         
     
 7. Check for balanced binary tree
@@ -70,9 +78,36 @@
         - Here we will collectively calculate the height and is balanced or not, hence at every node we will not require to calculate height.
         - Our function isBalanced(Node* root) will return an integer. If that is -1 hence your root node is not balanced, else if its positive, its height of tree from that that node.
     
-8. Binary tree to Doubly Linked List
+8. Binary tree to Linked List
     
-    Here we convert binary tree to doubly linked list.  Left pointer becomes prev and right becomes next pointer.
+    Here we convert binary tree to linked list.
+    
+    - Singly Linked list
+        
+        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bcce782-809e-4c2e-a02c-c236e006fa59/Untitled.png)
+        
+        In this conversion left child of every node becomes null, and right child points to next node in linked list.
+        
+        - Here we will basically follow a pre-order concept. As first node is processed and then left and then right childs are processed.
+        - A prev pointer will always point to the tail of the latest linked list prepared.
+        - Initially if prev is null root is set to prev, else prev→right  is set to curr-root.
+        - prev = root, in every iteration.
+        - After this we flatten(left childs), and then flatten(right childs).
+        
+    - Doubly Linked List
+        
+        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/521afab3-e083-4cac-8585-c5c90f847a4e/Untitled.png)
+        
+        In this conversion left child of every node points to previous node in LL, and right child points to next node in LL.
+        
+        - Here we will basically follow a in-order concept. As first left is processed and then curr-node and then right childs are processed.
+        - A prev pointer will always point to the tail of the latest linked list prepared.
+        - Head is returned from flatten(left child).
+        - Initially if prev is null Head is set to root, else root→left = prev and prev→right = root.
+        - prev = root, in every iteration.
+        - After this we flatten (right childs).
+    
+    TC - O(n),  SC - O(h)
     
 9. Construct Binary tree from different traversals.
     
