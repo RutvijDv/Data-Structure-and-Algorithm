@@ -145,9 +145,13 @@
 
 1. LCA 
     - Method 1
-        
-        
+        - Get path to first node in p1 vector.
+        - Get path to second node in p2 vector.
+        - Compare both the vectors and accordingly return the common ancestor.
+        - TC - O(n),  SC - O(h)
+    
     - Method 2
+        - TC - O(n),  SC - O(h)
 
 1. Burn a Binary tree
     - Naive
