@@ -119,13 +119,15 @@
         - All the elements before index i will consist of left childs of our curr node and elements after index i will consist of right childs of our curr node.
         
     - inorder + postorder
-        - The process is almost similar as above, but here we will start from n-1 index of postorder and go till 0th index, as post order is ( left - right - node ).
+        - The process is almost similar as above, but here we will start from n-1 index of postorder and go till 0th index, as post order is ( left - right - node )
     
     Hence inorder traversals has to be there for building a binary tree.
     
 10. Tree traversal in spiral form
-    - Method 1
-    - Method 2
+    - Here we will use 2 stacks accordingly to print spiral output.
+    - Initially push root to s1.
+    - while looping through elements of s1 push its children to s2.
+    - same way vice versa with s2.
 
 1. Diameter of Tree
     - Method 1
