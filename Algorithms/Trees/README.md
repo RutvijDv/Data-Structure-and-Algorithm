@@ -5,6 +5,7 @@
     2. Binary Search Trees.
     3. Binary heap
     4. B and B+ Trees in DBMS 
+   <br />
     
 2. ***Traversals***
     
@@ -27,19 +28,23 @@
     - Here in second loop we will go to left as much as possible.
     - Out of it we will pop one element from stack and move our curr to right of this popped element.
     - We will use our printing statement according to our need, at appropriate place in this for loop.
+    <br />
     
 3. ***Height of tree***
     - Recursively go down the tree and add a count whenever you go down a step and keep a check on its max value.
     - TC - O(n),  SC - O(n)
+    <br />
     
 4. ***Level order traversal*** 
     - Traverse the tree in level order.
     - Use simple queue to store the upcoming nodes and search the tree using a while loop.
     - TC - O(n),  SC - O(n)
+    <br />
     
 5. ***Level order traversal line by line***
     - use a simple queue once again but here we use a while and a additional for loop inside it to maintain the level one by one, and print them in new line.
     - TC - O(n),  SC - O(n)
+    <br />
     
 6. ***Different view of Binary tree***
     
@@ -47,23 +52,27 @@
     
     1. Top view
         
-        Here we will use the concept of level order traversal and keep track of distance of every node and push this dis along with node in our queue. At every node we will check if we have encountered a node with same distance previously. If no push this nodes data in our map with its distance, else do nothing and continue. At the end empty this whole map in our answer vector.
+        - Here we will use the concept of level order traversal and keep track of distance of every node and push this dis along with node in our queue. At every node we will check if we have encountered a node with same distance previously. If no push this nodes data in our map with its distance, else do nothing and continue. At the end empty this whole map in our answer vector.
         
-        TC - O(n),  SC - O(n)
+        - TC - O(n),  SC - O(n)
+        <br />
         
     2. Left view
         - Use level order traverasal line by line and store first element.
         - Use inorder traversal with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
         - TC - O(n),  SC - O(h)
+        <br />
         
     3. Right view
         - Use level order traverasal line by line and store last element.
         - Use inorder traversal where we visit right side before we visit left one, with a counter to keep track of level ( root is at level 0 ), whenever a new max level element is found, store it. This is because the left most element is first to encounter at every level.
         - TC - O(n),  SC - O(h)
+        <br />
         
     4. Bottom view
         - Same as top view but instead of updating our map only when we encounter that distance first time, here we will update it every time we encounter that same distance.
         - TC - O(n),  SC - O(n)
+        <br />
     
 7. ***Check for balanced binary tree***
     1. Naive method
@@ -74,6 +83,7 @@
     2. Efficient method
         - Here we will collectively calculate the height and is balanced or not, hence at every node we will not require to calculate height.
         - Our function isBalanced(Node* root) will return an integer. If that is -1 hence your root node is not balanced, else if its positive, its height of tree from that that node.
+        <br />
     
 8. ***Binary tree to Linked List***
     
@@ -91,6 +101,7 @@
         - prev = root, in every iteration.
         - After this we flatten(left childs), and then flatten(right childs).
         - TC - O(n),  SC - O(h)
+        <br />
         
     2. Doubly Linked List
         
@@ -105,6 +116,7 @@
         - prev = root, in every iteration.
         - After this we flatten (right childs).
         - TC - O(n),  SC - O(h)
+        <br />
     
 9. ***Construct Binary tree from different traversals.***
     
@@ -119,26 +131,30 @@
         - The process is almost similar as above, but here we will start from n-1 index of postorder and go till 0th index, as post order is ( left - right - node )
     
     Hence inorder traversals has to be there for building a binary tree.
+    <br />
     
 10. ***Tree traversal in spiral form***
     - Here we will use 2 stacks accordingly to print spiral output.
     - Initially push root to s1.
     - while looping through elements of s1 push its children to s2.
     - same way vice versa with s2.
+    <br />
 
-1. ***Diameter of Tree***
+1. #### Diameter of Tree 
     1. Method 1 ( Naive Solution )
         - calculate diameter of left subtree
         - calculate diameter of right subtree
         - calculate 1 + height( left-subtree ) + height( right-subtree )
         - return max of all 3 above.
         - TC - O(n^2)
+        <br />
         
     2. Method 2 ( Efficient Solution )
         - Keep a maxDia variable which keeps tracks of maximum diameter so far.
         - util function returns the height of the current node.
         - at every node we will update the maxDia variable according to heights of the subtrees.
         - TC - O(n)
+        <br />
 
 1. ***LCA*** 
     1. Method 1
@@ -146,21 +162,26 @@
         - Get path to second node in p2 vector.
         - Compare both the vectors and accordingly return the common ancestor.
         - TC - O(n),  SC - O(h)
-        
+        <br />
+
     2. Method 2
         - TC - O(n),  SC - O(h)
+        <br />
 
 1. ***Burn a Binary tree***
     - TC - O(n),  SC - O(h)
+    <br />
 
 1. ***Count Nodes in complete binary tree***
     - Naive
         - Simply go throught every node in any order and count them.
         - TC - O(n),  SC - O(h)
+        <br />
     
     - Efficient
         - Use the concept of comlpete binary tree.
         - TC - O(Logn * Logn).
+        <br />
 
 1. ***Serialise and deserialise binary tree***
     
@@ -170,11 +191,13 @@
         - Converting tree to string
         - Simply traverse the tree in preorder and push the elelments in array. Push -1 where ever you find NULL.
         - TC - O(n),  SC - O(h)
+        <br />
         
     2. Deserialise
         - Converting string to tree
         - Simply traverse the above generated preorder array, and start building the tree. If you encounter -1, consider it as a NULL.
         - TC - O(n),  SC - O(h)
+        <br />
 
 ---
 
