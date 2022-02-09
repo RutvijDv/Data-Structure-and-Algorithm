@@ -156,12 +156,28 @@
 1. Burn a Binary tree
     - TC - O(n),  SC - O(h)
 
-1. Serialise and deserialise binary tree
+1. Count Nodes in complete binary tree
+    - Naive
+        - Simply go throught every node in any order and count them.
+        - TC - O(n),  SC - O(h)
+    
+    - Efficient
+        - Use the concept of comlpete binary tree.
+        - TC - O(Logn * Logn).
 
-- Serialise
+1. Serialise and deserialise binary tree
     
+    A process where we convert a binary tree into array or string in such a way that the tree can be generated back from that array or string.
     
-- Deserialise
+    - Serialise
+        - Converting tree to string
+        - Simply traverse the tree in preorder and push the elelments in array. Push -1 where ever you find NULL.
+        - TC - O(n),  SC - O(h)
+        
+    - Deserialise
+        - Converting string to tree
+        - Simply traverse the above generated preorder array, and start building the tree. If you encounter -1, consider it as a NULL.
+        - TC - O(n),  SC - O(h)
 
 ---
 
