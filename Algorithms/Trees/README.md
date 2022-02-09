@@ -91,7 +91,7 @@
     
     1. Singly Linked list
         
-        ![Untitled](/images/sll.png)
+        ![Untitled](./images/sll.png)
         
         In this conversion left child of every node becomes null, and right child points to next node in linked list.
         
@@ -104,7 +104,8 @@
         <br />
         
     2. Doubly Linked List
-        ![Untitled](/images/dll.png)
+
+        ![Untitled](./images/dll.png)
         
         In this conversion left child of every node points to previous node in LL, and right child points to next node in LL.
         
@@ -198,4 +199,37 @@
 
 ---
 
-## Important Questions
+## Properties
+
+|  |  |
+| --- | --- |
+| Maximum number of node at level X (root at level 0) | 2<sup>X</sup> |
+| Maximum number of nodes of binary tree of height H | 2<sup>H</sup>  -  1 |
+| Minimum height of Binary tree with L leaves | log<sub>2</sub>(L) + 1 |
+| Minimum height of binary tree with N nodes | log(N) |
+
+## Types
+
+1. **Full Binary Tree**
+    
+    A Binary Tree is a full binary tree if every node has 0 or 2 children 
+    <br />
+    
+2. **Complete Binary Tree**
+    
+    A Binary Tree is a Complete Binary Tree if all the levels are completely filled except possibly the last level and the last level has all keys as left as possible.
+    <br />
+    
+3. **Perfect Binary Tree**
+    
+    A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level.
+    <br />
+    
+4. **Balanced Binary Tree**
+    
+    A Balanced binary tree, also referred to as a height-balanced binary tree, is defined as a binary tree in which the height of the left and right subtree of any node differ by not more than 1.
+    <br />
+
+5. **A degenerate (or pathological) tree**    
+    A Tree where every internal node has one child. Such trees are performance-wise same as linked list.
+    <br />
