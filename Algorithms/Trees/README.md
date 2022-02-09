@@ -154,8 +154,7 @@
         - TC - O(n),  SC - O(h)
 
 1. Burn a Binary tree
-    - Naive
-    - Efficient
+    - TC - O(n),  SC - O(h)
 
 1. Serialise and deserialise binary tree
 
