@@ -91,7 +91,7 @@
     
     1. Singly Linked list
         
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4bcce782-809e-4c2e-a02c-c236e006fa59/Untitled.png)
+        ![Untitled](/images/sll.png)
         
         In this conversion left child of every node becomes null, and right child points to next node in linked list.
         
@@ -104,8 +104,7 @@
         <br />
         
     2. Doubly Linked List
-        
-        ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/521afab3-e083-4cac-8585-c5c90f847a4e/Untitled.png)
+        ![Untitled](/images/dll.png)
         
         In this conversion left child of every node points to previous node in LL, and right child points to next node in LL.
         
@@ -129,9 +128,7 @@
         
     2. inorder + postorder
         - The process is almost similar as above, but here we will start from n-1 index of postorder and go till 0th index, as post order is ( left - right - node )
-    
-    Hence inorder traversals has to be there for building a binary tree.
-    <br />
+        <br />
     
 10. ***Tree traversal in spiral form***
     - Here we will use 2 stacks accordingly to print spiral output.
@@ -140,7 +137,7 @@
     - same way vice versa with s2.
     <br />
 
-1. #### Diameter of Tree 
+1.  ***Diameter of Tree*** 
     1. Method 1 ( Naive Solution )
         - calculate diameter of left subtree
         - calculate diameter of right subtree
@@ -198,8 +195,6 @@
         - Simply traverse the above generated preorder array, and start building the tree. If you encounter -1, consider it as a NULL.
         - TC - O(n),  SC - O(h)
         <br />
-
----
 
 ---
 
