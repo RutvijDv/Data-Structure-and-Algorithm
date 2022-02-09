@@ -1,28 +1,34 @@
 # Graph
 
 1. **Adjacency List and Matrix**
+<br />
     
 2. **BFS** (Breath First Search)
     Breadth first search is a graph traversal algorithm that starts traversing the graph from root node and explores all the neighbouring nodes. Then, it selects the nearest node and explore all the unexplored nodes. The algorithm follows the same process for each of the nearest node until it finds the goal.
+    <br />
     
 3. **Application of BFS**
     1. Shortest path in an unweighted graph
     2. Social networking search
     3. Cycle detection
     4. Topological sorting
+    <br />
     
 4. **DFS**
     Depth first search (DFS) algorithm starts with the initial node of the graph G, and then goes to deeper and deeper until we find the goal node or the node which has no children. The algorithm, then backtracks from the dead end towards the most recent node that is yet to be completely unexplored.
+    <br />
     
 5. **Application of DFS**
     1. Cycle detection
     2. Topological sorting
     3. Path finding
+    <br />
     
 6. **Shortest path in Undirected Unweighted Graph**
     1. BFS based solution
         - simple bfs algorithm with just one modification
         - we need to update the dist[v] = dist[u] + 1 at point where you push your child nodes to qeueue for further process.
+        <br />
     
 7. **Detect cycle in undirected graph**
     1. **DFS based solution ( passing parent in dfs recursion )
@@ -31,6 +37,7 @@
         - if it is parent, leave and continue for next child node.
         - if it is not parent but is already visited then return true, as we found the loop.
         - concept of this algorithm relies on the fact that while finding the child of current nodes we will also encounter the parent node in out child's list, hence we keep check od parent element and handle other nodes normally.
+        <br />
 
     2. BFS based solution ( storing parent of every node in vector )
         - simple bfs algorithm with one extra set of requirements.
@@ -42,6 +49,7 @@
         - if yes, leave and continue to next child.
         - if not and is still visited, return true, as the loop is found.
         - concept of this algorithm relies on the fact that while finding the child of current nodes we will also encounter the parent node in out child's list, hence we keep check od parent element and handle other nodes normally.
+        <br />
     
 8. **Topological sorting**
     1. **BFS based solution ( using indegree, and pushing to answer at indegree == 0 )
@@ -52,6 +60,7 @@
         - everytime we encounter a child node decrease its indegree.
         - at same point if indegree of that element becomes zero, push it to the queue.
         - here the concept is, indegree becomes zero when all its parent are a parent of response array hence now its the turn of current node to be a part of response array.
+        <br />
 
     2. DFS based solution ( store answer in stack, push the node to stack when dfs of all its child gets completed )
         - keep visited boolean array of nodes.
@@ -60,6 +69,7 @@
         - at the end of dfs function make stack.push(i).
         - after all the recursion is done push the elements of stack one by on into an array which will be your response.
         - here the concept is you keep going deeper and deeper till the child node which is not a parent of anyone is reached and is pushed to the stack, same way all its parents in back tracking manner gets pushed to the stack.
+        <br />
     
 9. **Detect cycle in directed graph**
     1. **DFS based solution ( using recursion stack to keep track of nodes in present in same recursion stack or not )
@@ -71,6 +81,7 @@
         - while visiting child nodes, if node is not even visited go for dfs and return true if that dfs call returns true.
         - else when node is visited, ans is also present in seen array then its is the point we find the loop return true else go for next child node.
         - basically the concept is if a child element is visited and was also seen in the current resursion stack, we confirm that there loop. 
+        <br />
 
     2. BFS based solution ( topological based, using indegree, and keeping count  of number of nodes visited )
         - use the concept of topological sort.
@@ -79,10 +90,12 @@
         - and at last out of the loop check c == V or not.
         - basically the concept is if there is a loop then the number of node whose indegree will become zero in loop will never be equal to total nodes, hence not all nodes will become indegree = 0.
         - this is because in a loop of directed edges everyone is depenedent on each other hence is a endless loop.
+        <br />
     
 10. **Shortest path in directed acyclic unweighted graph**
         - get topological sort array using bfs or dfs.
         - pick one by one element of the sorted array as u, and update its al child (v)'s dis value as -> dis[v] = dis[u]+weight(u,v) if dis[v] was greater than the dis[u]-w(u,v) set value.
+        <br />
 
     
 11. **Prims’s Algorithm/ Minimum spanning tree ( weighted and undirected connected graph only )**
@@ -96,6 +109,7 @@
     - create 2 sets of nodes - i) included in MST ii) not included in MST
     - gradually keep picking the minimum edge that connects the set i) to any node of set ii)
     - this way we shift node one by one from set ii) to set i)
+    <br />
 
     Steps
     - create visited array for storing which elements are in mSet.
@@ -107,6 +121,7 @@
     - res += w (weight of mminimum distance element just found)
     - iterate to childs v of this current node u.
     - update the distance of child if its greater than w(u,v), because this child can be accessed from various other parents also.
+    <br />
     
 12. **Dijikstra’s Algorithm ( weighted and undirected graph, minimum distance from source to all vertices )**
 
@@ -115,6 +130,7 @@
     - create 2 sets of nodes - i) dis fixed ii) dis not fixed.
     - gradually keep picking the minimum dis element.
     - this way we fix node one by one from set ii) to set i)
+    <br />
 
     Steps
     - create visited array for storing which elements are fixed or not.
@@ -125,8 +141,10 @@
     - now this node is to be included, hence make visited[u] = true.
     - iterate to childs v of this current node u.
     - update the distance of child if its greater than dis[u]+w(u,v), because this child can be accessed from various other parents also.
+    <br />
 
     
 13. **BellmanFord’s Algorithm**
     1. Process all edges V times and relax them.
     2. lastly use one more for loop to check negative cycle.
+    <br />
