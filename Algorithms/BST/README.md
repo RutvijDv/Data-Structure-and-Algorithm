@@ -48,6 +48,27 @@
         - TC - O(n*Log(n)),  SC - O(n)
         <br />
 
+8. Check for BST
+    
+    
+    1. Method 1
+        - At every node go to left subtree and find max element, then go to right and get min  value. Now our current element should lie between this min max.
+        - Same way check for every node using any traversal.
+        - TC - O(n^2),  SC - O(n)
+        <br />
+        
+    2. Method 2
+        - Keep a range (min,max) at every point and check the current node’s values lies between it or not.
+        - While going to further nodes modify the range according to current node’s value and pass these range in next function call.
+        - TC - O(n),  SC - O(n)
+        <br />
+        
+    3. Method 3
+        - As we know that inorder traversal of BST gives us a sorted output.
+        - Using this fact we will traverse the tree in inorder fashion and keep a prev element in hand to compare the current element with it.
+        - TC - O(n),  SC - O(n)
+        <br />
+
 
 ## Types of Self Balancing Trees
 
