@@ -10,8 +10,8 @@
     | Sorted Traversal | O(n) |
     <br />
 
-2. ***Search***
-<br />
+2. ***Search*** 
+    <br />
     
     
 3. ***Insert***
@@ -26,4 +26,50 @@
     - Case - 3 - left and right subtree of node to be deleted exists  —> replace our node with next element from its inorder traversal and delete that element from its original place. For finding that next element we just go to right of our current node and then keep going let till we encounter a leaf, that leaf node is our tagret node.
     <br />
 
+5. ***Floor***
+    - Here we need to find the largest valued element from bst which smaller than or equal to the given element.
+    <br />
+
+6. ***Ceil***
+    - Here we need to find the Smallest valued element from bst which larger than or equal to the given element.
+    <br />
+
+7. ***Ceil on left side in array***
+    - Here we find ceiling of every element present on left side to it in  the array. If not found we return -1.
+    <br />
+        
+    1. Naive
+        - Use 2 for Loops and manually find it.
+        - TC - O(n^2),  SC - O(n)
+        <br />
+        
+    2. Efficient
+        - Use set in c++ and start inserting elements one by one, before every insertion use lower bound funtion to find ceil in the current set.
+        - TC - O(n*Log(n)),  SC - O(n)
+        <br />
+
+
+## Types of Self Balancing Trees
+
+1. ***AVL Trees***
     
+    - Height difference of left and right subtree of node should be strictly less than 2 at any point of time.
+    - Re-balancing is done when heights of two child subtrees of a node differ by more than one.
+    - Faster retrievals as strictly balanced.
+    - Due to its strict self-balancing, searching for a element is better than other trees on average. On the other hand insert and delete operations are a bit costlier than others as it requir strict balancing.
+    - AVL trees store **balance factors or heights** with each node, thus requires storage for an integer per node whereas Red Black Tree requires only 1 bit of information per node.
+    <br />
+    
+2. ***Red Black Trees***
+    
+    - Every node is painted with one of the two colors(Red or Black).
+    - Root is always black.
+    - Both children of red node are black, hence no two consecutive nodes are red.
+    - Every simple path from a given node to any of its descendant leaves contains the same number of blacknodes.
+    - When Tree is modified ( insert and delete ) , new tree is subsequently rearranged and repainted.
+    - It requires 1 bit of color information for each node in tree.
+    - Comparing to AVL trees it does not require strict balancing. Path form root to farthest leaf is no more than twice as long as path from root to nearest leaf..
+    - Due to this characteristics, insert and delete operation are better than other self balancing trees. On the other hand search operations are a bit costlier.
+    - Red Black Trees are used in most of the language libraries like ****map, multimap, multiset ****in C++ whereas AVL trees are used in **databases** where faster retrievals are required.
+    <br />
+
