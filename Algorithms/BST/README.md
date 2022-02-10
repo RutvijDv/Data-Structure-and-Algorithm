@@ -69,6 +69,19 @@
         - TC - O(n),  SC - O(n)
         <br />
 
+9. isPair
+    1. Method 1 (inorder traversal)
+        - Traverse the tree in inorder fashion and create a array of elements which will be sorted.
+        - Now we use 2 pointer technique on sorted array to find the pair.
+        <br />
+        
+    2. Mehthod 2 ( Hashing )
+        - Traverse in inorder fashion and keep storing the elements in set of c++.
+        - at every node check that; if the current node is included, do we find a pair to make up a target with it. If yes return true. Else store the current element in set and move ahead in our traversal.
+        <br />
+
+
+
 
 ## Types of Self Balancing Trees
 
