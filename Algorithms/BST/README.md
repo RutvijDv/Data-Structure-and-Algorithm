@@ -48,7 +48,7 @@
         - TC - O(n*Log(n)),  SC - O(n)
         <br />
 
-8. Check for BST
+8. ***Check for BST***
     
     
     1. Method 1
@@ -69,19 +69,33 @@
         - TC - O(n),  SC - O(n)
         <br />
 
-9. isPair
+9. ***Swapped nodes***
+<br />
+
+10. ***isPair***
     1. Method 1 (inorder traversal)
         - Traverse the tree in inorder fashion and create a array of elements which will be sorted.
         - Now we use 2 pointer technique on sorted array to find the pair.
+        - TC - O(n),  SC - O(n)
         <br />
         
     2. Mehthod 2 ( Hashing )
         - Traverse in inorder fashion and keep storing the elements in set of c++.
         - at every node check that; if the current node is included, do we find a pair to make up a target with it. If yes return true. Else store the current element in set and move ahead in our traversal.
+        - TC - O(n),  SC - O(n)
         <br />
 
+11. ***Vertical sum***
+    - Use map to store sum at every vertical level. Here key will represent the level and value represent the sum at that level.
+    - Traverse the tree in inorder fashion and pass the vertical level ar every function call appropriately.
+    - TC - O(n),  SC - O(n)
+    <br />
 
-
+12. ***Vertical Traversal***
+    - Here we will use Level order traversal, where queue will store the upcoming nodes with its vertical distance in respect to root node. Root node will be at 0 vertical distance.
+    - At every node we will store data in a map, where key will represent the vertical distance and value will be a vector of all the nodes at that vertical distance.
+    - TC - O(n),  SC - O(n)
+    <br />
 
 ## Types of Self Balancing Trees
 
