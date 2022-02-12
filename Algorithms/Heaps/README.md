@@ -40,7 +40,7 @@
     <br />
     
 
-1. MinHeapify
+1. ***MinHeapify***
     - It is a function executed for a node whose place has to be corrected. Here we get i as the node index as the input.
     - We check if it smaller than its left and right child. If yes do nothing. Else swap the node with smallest of left and right child.
     - Perform the same operation with the it till it becomes smaller than left and right child.
@@ -51,7 +51,7 @@
     Here we MinHeapify(0).
     <br />
     
-2. Extract min and MinHeapify
+2. ***Extract min and MinHeapify***
     - We get the top most element in O(1) time.
     - Now we replace this element with the last element of our array (or say tree) and delete this last element.
     - Then we call MinHeapify(0) for the oth index, as our replacement violated the heap structure.
@@ -60,7 +60,7 @@
     ![Untitled](./images/extractMin.png)
     <br />
     
-3. Decrease Key
+3. ***Decrease Key***
     - Here we replace a existing node with a smaller value.
     - Hence we see that replaced values need to lifted up only (as it was smaller than other).
     - We keep shifting the node with its parent until we get the approriate place.
@@ -70,7 +70,7 @@
     <br />
     
 
-1. Delete Key
+1. ***Delete Key***
     - Here we will be given a index which needs to be deleted from tree (or say array).
     - We use Decrease key and extarctMin functions combined.
     - First we decrease key that given index with (-infinity) and obviuosly it will be lifted up till root as is the smallest element.
@@ -83,7 +83,7 @@
     
      
     
-2. Build Heap
+2. ***Build Heap***
     - We aim to build a heap from the randomly array of size n.
     - We start by picking the rightmost lower internal node and executing minHeapify on it.
     - We get this node by   i = ( (size-2) / 2 ).
@@ -92,7 +92,7 @@
     - TC - O(n) only.
     <br />
 
-1. Heap sort
+1. ***Heap sort***
     - Convert the given array in heap structure ( execute build max or min heap ) and it takes O(n) time.
     - Now ExtractMIn or ExtarctMax as per your need and heapify the index 0.
     - This takes O(Log(n)) time.
