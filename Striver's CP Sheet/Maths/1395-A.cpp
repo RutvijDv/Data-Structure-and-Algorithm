@@ -25,7 +25,69 @@ ll MOD = 100000007;
 
 void solve()
 {
-    ll r, g, b, a
+    ll r, g, b, w;
+
+    cin >> r >> g >> b >> w;
+
+    ll sum = r + g + b + w;
+
+    int even = 0;
+    int odd = 0;
+
+    if (r % 2 == 0)
+        even++;
+    else
+        odd++;
+
+    if (g % 2 == 0)
+        even++;
+    else
+        odd++;
+
+    if (b % 2 == 0)
+        even++;
+    else
+        odd++;
+
+    if (w % 2 == 0)
+        even++;
+    else
+        odd++;
+
+    if (odd <= 1)
+    {
+        cout << "Yes\n";
+    }
+    else
+    {
+        int x = 1;
+        while (r > 0 && g > 0 && b > 0 && x--)
+        {
+            r--;
+            g--;
+            b--;
+            w += 3;
+
+            int cnt = 0;
+
+            if (r % 2 == 1)
+                cnt++;
+            if (g % 2 == 1)
+                cnt++;
+            if (b % 2 == 1)
+                cnt++;
+            if (w % 2 == 1)
+                cnt++;
+
+            if (cnt <= 1)
+            {
+                cout << "Yes\n";
+                return;
+            }
+        }
+
+        cout << "No\n";
+    }
 }
 
 int main()
